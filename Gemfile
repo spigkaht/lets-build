@@ -49,6 +49,7 @@ gem "bootsnap", require: false
 
 gem "autoprefixer-rails"
 gem "simple_form", github: "heartcombo/simple_form"
+gem 'rails_icons', '~> 1.0'
 
 group :development, :test do
   gem "dotenv-rails"

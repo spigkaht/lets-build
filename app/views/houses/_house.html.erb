@@ -1,0 +1,56 @@
+<tbody id="<%= dom_id house %>" class="w-full sm:w-auto my-5 space-y-5">
+  <tr>
+    <td colspan="1" class="text-2xl font-bold">
+      <%= house.name %>
+    </td>
+    <td colspan="2" class="text-2xl font-bold">
+      <%= house.builder %>
+    </td>
+    <td colspan="2" class="text-2xl font-bold">
+      <%= "#{number_to_currency(house.price_base)}" %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= house.area_total %>
+    </td>
+    <td>
+      <%= house.area_house %>
+    </td>
+    <td>
+      <%= house.min_block_width %>
+    </td>
+    <td>
+      <%= house.width_house %>
+    </td>
+    <td>
+      <%= house.length_house %>
+    </td>
+    <td>
+      <%= house.storeys == house.storeys.to_i ? house.storeys.to_i : house.storeys %>
+    </td>
+    <td>
+      <%= house.bedrooms == house.bedrooms.to_i ? house.bedrooms.to_i : house.bedrooms %>
+    </td>
+    <td>
+      <%= house.bathrooms == house.bathrooms.to_i ? house.bathrooms.to_i : house.bathrooms %>
+    </td>
+    <td>
+      <%= house.living_areas == house.living_areas.to_i ? house.living_areas.to_i : house.living_areas %>
+    </td>
+    <td>
+      <%= house.study_areas == house.study_areas.to_i ? house.study_areas.to_i : house.study_areas %>
+    </td>
+    <td class="flex">
+      <%= link_to house, class: "p-2" do %>
+          <%= icon "search", class: ["size-7"] %>
+      <% end %>
+      <%= link_to edit_house_path(house), class: "p-2" do %>
+        <%= icon "edit", class: ["size-7"] %>
+      <% end %>
+      <%= link_to house, class: "p-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+        <%= icon "x-circle", class: ["size-7"] %>
+      <% end %>
+    </td>
+  </tr>
+</tbody>
